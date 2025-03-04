@@ -4,13 +4,9 @@ import readFile from '../readfile.js';
 var frequency = 0;
 const input = readFile('day1Input.txt').split('\n');
 
-/**
- * @param {number} a
- */
-function applyFreq(a) {
-  frequency += parseInt(a);
+for (let i = 0; i < input.length; i++) {
+  frequency += parseInt(input[i])
 }
 
-input.forEach((a) => applyFreq(a))
 
 console.log(frequency);
