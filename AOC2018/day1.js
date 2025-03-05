@@ -1,14 +1,16 @@
-import '../readfile.js';
 import readFile from '../readfile.js';
-var c = new Set([0]);
+var c = [];
 var frequency = 0;
-const input = readFile('day1Input.txt').split('\n').map(Number);
-while(true) {
+let freqArray = [0];
+const input = readFile('day1Input.txt').split('\n');
+
 for (let i in input) {
-  frequency += input[i];
-  if (c.has(frequency)) { console.log(frequency); process.exit(); }
-  c.add(frequency);
-}
+  let inp = parseInt(input[i]);
+  frequency += inp;
+  if (freqArray.includes(frequency)) {
+    console.log(frequency, freqArray);
+  }
+  freqArray.push(frequency);
 }
 
 console.log(frequency);
